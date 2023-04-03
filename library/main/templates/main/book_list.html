@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Список книг</h2>
+  <ul>
+    {% for book in books %}
+      <li><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a> by {{ book.author.name }} ({{ book.publisher.name }}) - {{ book.publication_date }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
